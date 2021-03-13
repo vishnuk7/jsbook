@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import './styles/index.css';
 import * as esbulid from 'esbuild-wasm';
+import { unpkgPathPlugin } from './unpkg-path-plugin';
 
 const App = () => {
 	const [input, setInput] = useState('');
@@ -18,12 +19,19 @@ const App = () => {
 	}, []);
 
 	const onClick = async () => {
-		const result = await esbulid.transform(input, {
-			loader: 'jsx',
-			target: 'es2015',
+		// const result = await esbulid.transform(input, {
+		// 	loader: 'jsx',
+		// 	target: 'es2015',
+		// });
+
+		const result = await esbulid.build({
+			entryPoints: ['index.js'],
+			bundle: true,
+			write: false,
+			plugins: [unpkgPathPlugin()],
 		});
 
-		setCode(result.code);
+		console.log(result);
 	};
 
 	return (
