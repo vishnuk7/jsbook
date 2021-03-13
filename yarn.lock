@@ -4647,6 +4647,11 @@
     "d" "^1.0.1"
     "ext" "^1.1.2"
 
+"esbuild-wasm@^0.9.2":
+  "integrity" "sha512-1NjU4+dAvwrSoEDj05WCTG47oVSU3656aAKN+pBRWLyoATiZe56UcJWG6dIF4kQ62xDw7cA3Ad5//hl8ZJmvsw=="
+  "resolved" "https://registry.npmjs.org/esbuild-wasm/-/esbuild-wasm-0.9.2.tgz"
+  "version" "0.9.2"
+
 "escalade@^3.0.2", "escalade@^3.1.1":
   "integrity" "sha512-k0er2gUkLf8O0zKJiAhmkTnJlTvINGv7ygDNPbeIsX/TJjGJZHuh9B2UxbsaEkmlEo9MfhrSzmhIlhRlI2GXnw=="
   "resolved" "https://registry.yarnpkg.com/escalade/-/escalade-3.1.1.tgz"
