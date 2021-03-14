@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import './styles/index.css';
 import * as esbulid from 'esbuild-wasm';
-import { unpkgPathPlugin } from './unpkg-path-plugin';
+import { unpkgPathPlugin } from './plugin/unpkg-path-plugin';
+import { fetchPlugin } from './plugin/fetch-plugin';
 
 const App = () => {
 	const [input, setInput] = useState('');
@@ -28,7 +29,7 @@ const App = () => {
 			entryPoints: ['index.js'],
 			bundle: true,
 			write: false,
-			plugins: [unpkgPathPlugin(input)],
+			plugins: [unpkgPathPlugin(), fetchPlugin(input)],
 			define: {
 				'process.env.NODE_ENV': '"production"',
 				global: 'window',
