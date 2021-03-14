@@ -31,7 +31,7 @@ const App = () => {
 			plugins: [unpkgPathPlugin()],
 		});
 
-		console.log(result);
+		console.log('😎 ', result);
 	};
 
 	return (
