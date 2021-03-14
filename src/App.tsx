@@ -29,9 +29,13 @@ const App = () => {
 			bundle: true,
 			write: false,
 			plugins: [unpkgPathPlugin()],
+			define: {
+				'process.env.NODE_ENV': '"production"',
+				global: 'window',
+			},
 		});
 
-		console.log('😎 ', result);
+		setCode(result.outputFiles[0].text);
 	};
 
 	return (
@@ -40,7 +44,7 @@ const App = () => {
 			<button onClick={onClick} className='bg-red-600 text-white py-1 px-3 rounded-md'>
 				Submit
 			</button>
-			<p>{code}</p>
+			<code>{code}</code>
 		</div>
 	);
 };
