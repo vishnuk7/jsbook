@@ -1,10 +1,4 @@
-import axios from 'axios';
 import * as esbuild from 'esbuild-wasm';
-import localforage from 'localforage';
-
-const fileCache = localforage.createInstance({
-	name: 'fileCache',
-});
 
 export const unpkgPathPlugin = () => {
 	return {
