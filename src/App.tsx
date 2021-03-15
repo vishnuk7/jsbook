@@ -3,6 +3,7 @@ import './styles/index.css';
 import * as esbulid from 'esbuild-wasm';
 import { unpkgPathPlugin } from './plugin/unpkg-path-plugin';
 import { fetchPlugin } from './plugin/fetch-plugin';
+import { CodeEditor } from './components/CodeEditor';
 
 const App = () => {
 	const [input, setInput] = useState('');
@@ -60,6 +61,7 @@ const App = () => {
 
 	return (
 		<div>
+			<CodeEditor />
 			<textarea onChange={(e) => setInput(e.target.value)} className='border-gray-400 border-2'></textarea>
 			<button onClick={onClick} className='bg-red-600 text-white py-1 px-3 rounded-md'>
 				Submit
