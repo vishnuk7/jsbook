@@ -14,16 +14,26 @@ export const bundle = async (rawInput: string) => {
         init = true;
     }
 
-    const result = await esbulid.build({
-        entryPoints: ['index.js'],
-        bundle: true,
-        write: false,
-        plugins: [unpkgPathPlugin(), fetchPlugin(rawInput)],
-        define: {
-            'process.env.NODE_ENV': '"production"',
-            global: 'window',
-        },
-    });
+    try {
+        const result = await esbulid.build({
+            entryPoints: ['index.js'],
+            bundle: true,
+            write: false,
+            plugins: [unpkgPathPlugin(), fetchPlugin(rawInput)],
+            define: {
+                'process.env.NODE_ENV': '"production"',
+                global: 'window',
+            },
+        });
 
-    return result.outputFiles[0].text;
+        return {
+            code:result.outputFiles[0].text,
+            error: ''
+        }
+    } catch (err) {
+        return {
+            code: '',
+            error: err.message
+        }
+    }
 };

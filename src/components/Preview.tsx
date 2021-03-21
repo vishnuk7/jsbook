@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 interface PreviewProps {
     code: string;
+	err: string;
 }
 
 const html = `
@@ -11,13 +12,22 @@ const html = `
 			<body>
 				<div id="root"></div>
 				<script>
+					const handleError = (err) => {
+						const root = document.querySelector('#root');
+						root.innerHTML = '<div style="color:#EA2027"><h4>Runtime Error</h4>'+err+'</div>';
+						console.error(err);
+					}
+
+					window.addEventListener('error', (event) => {
+						event.preventDefault();
+						handleError(event.error);
+					})
+
 					window.addEventListener('message',(event) => {
 							try{
 							eval(event.data);
 							}catch(err){
-								const root = document.querySelector('#root');
-								root.innerHTML = '<div style="color:red"><h4>Runtime Error</h4>'+err+'</div>';
-								console.error(err);
+								handleError(err)
 							}
 					},
 					false);
@@ -26,7 +36,7 @@ const html = `
 		</html>
 	`;
 
-export const Preview: React.FC<PreviewProps> = ({ code }) => {
+export const Preview: React.FC<PreviewProps> = ({ code, err }) => {
     const iframe = useRef<HTMLIFrameElement>(null);
 
     useEffect(() => {
@@ -46,6 +56,7 @@ export const Preview: React.FC<PreviewProps> = ({ code }) => {
             sandbox="allow-scripts"
             srcDoc={html}
         ></iframe>
+		{err && <div className='error'>{err}</div>}
 		</IframeStyled>
     );
 };
@@ -53,7 +64,6 @@ export const Preview: React.FC<PreviewProps> = ({ code }) => {
 const IframeStyled = styled.div`
 	position: relative;
 	height: 100%;
-	/* width: 50%; */
 	flex-grow: 1;
 
 
@@ -61,6 +71,13 @@ const IframeStyled = styled.div`
 		height: 100%;
 		background: #ffffff;
 		width: 100%;
+	}
+
+	.error{
+		color:#EA2027;
+		position:absolute;
+		top:10px;
+		left: 10px;
 	}
 
 	.react-draggable-transparent-selection &:after{

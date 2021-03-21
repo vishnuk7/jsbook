@@ -27,7 +27,12 @@ export const CodeEditor: React.FC<CodeEditorProps> = ({
             editorRef
         );
 
-        highlighter.highLightOnDidChangeModelContent();
+        // highlighter.highLightOnDidChangeModelContent(
+        //     () => {},
+        //     () => {},
+        //     () => {},
+        //     () => {}
+        // );
     };
 
     const onFormatClick = () => {
