@@ -67,7 +67,7 @@ export const CodeEditor: React.FC<CodeEditorProps> = ({
                 onMount={onEditorMount}
                 value={initialValue}
                 theme="vs-dark"
-                height="300px"
+                height="100%"
                 language="javascript"
                 options={{
                     wordWrap: 'on',
@@ -86,6 +86,10 @@ export const CodeEditor: React.FC<CodeEditorProps> = ({
 };
 
 const EditorStyled = styled.div`
+   position: relative;
+   width: calc(100% - 10px);
+   height: 100%;
+
     button {
         opacity: 0;
         transition: all 0.2 ease-in;
