@@ -1,3 +1,4 @@
+import { v4 as uuid } from 'uuid';
 import produce from 'immer';
 import { ActionType } from '../action-types';
 import { Action } from '../actions';
@@ -45,7 +46,7 @@ const reducer = produce((state: CellsState = initialState, action: Action) => {
             const cell: Cell = {
                 content: '',
                 type: action.payload.type,
-                id: '1',
+                id: uuid(),
             };
 
             state.data[cell.id] = cell;

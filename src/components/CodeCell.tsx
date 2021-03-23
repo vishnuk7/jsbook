@@ -14,18 +14,17 @@ const CodeCell = () => {
             const output = await bundle(input);
             setCode(output.code);
             setError(output.error);
-        },1000)
+        }, 1000);
 
         return () => {
             clearTimeout(timer);
-        }
-    }, [input])
-
+        };
+    }, [input]);
 
     return (
-        <Resizable direction='vertical'>
-            <div className='flex h-full'>
-                <Resizable direction='horizontal'>
+        <Resizable direction="vertical">
+            <div className="flex h-full px-2 py-4 my-4 mx-3 border-gray-900 border-2 rounded-md shadow-md">
+                <Resizable direction="horizontal">
                     <CodeEditor
                         onEditorChange={(value) => setInput(value)}
                         initialValue=""
@@ -38,7 +37,7 @@ const CodeCell = () => {
                     Submit
                 </button> */}
                 {/* <code>{input}</code> */}
-                <Preview code={code} err={err}/>
+                <Preview code={code} err={err} />
             </div>
         </Resizable>
     );

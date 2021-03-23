@@ -91,9 +91,9 @@ export const CodeEditor: React.FC<CodeEditorProps> = ({
 };
 
 const EditorStyled = styled.div`
-   position: relative;
-   width: calc(100% - 10px);
-   height: 100%;
+    position: relative;
+    width: calc(100% - 10px);
+    height: 100%;
 
     button {
         opacity: 0;
