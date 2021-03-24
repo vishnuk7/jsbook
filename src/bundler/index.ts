@@ -27,13 +27,13 @@ export const bundle = async (rawInput: string) => {
         });
 
         return {
-            code:result.outputFiles[0].text,
-            error: ''
-        }
+            code: result.outputFiles[0].text,
+            error: '',
+        };
     } catch (err) {
         return {
             code: '',
-            error: err.message
-        }
+            error: err.message as string,
+        };
     }
 };

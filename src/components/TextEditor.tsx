@@ -10,7 +10,6 @@ interface TextEditorProps {
 
 export const TextEditor: React.FC<TextEditorProps> = ({ cell }) => {
     const [editing, setEditing] = useState(false);
-    const [value, setValue] = useState('# Header');
     const ref = useRef<HTMLDivElement | null>(null);
 
     const { updateCell } = useActions();
@@ -50,7 +49,7 @@ export const TextEditor: React.FC<TextEditorProps> = ({ cell }) => {
 
     return (
         <div
-            className="px-2 py-4 my-4 mx-3 border-gray-900 border-2 rounded-md"
+            className="px-2 py-4 border-gray-900 border-2 rounded-md"
             onClick={() => setEditing(true)}
         >
             <MDEditor.Markdown source={cell.content || 'Click here to edit'} />

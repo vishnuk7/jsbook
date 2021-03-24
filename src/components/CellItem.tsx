@@ -17,8 +17,10 @@ export const CellItem: React.FC<CellItemProps> = ({ cell }) => {
     }
 
     return (
-        <div>
-            <ActionBar id={cell.id} />
+        <div className="relative">
+            <div className="bg-gray-700 opacity-40 hover:opacity-100 h-10">
+                <ActionBar id={cell.id} />
+            </div>
             {child}
         </div>
     );
