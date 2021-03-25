@@ -8,10 +8,10 @@ export const CellList: React.FC = () => {
         order.map((id) => data[id])
     );
 
-    const renderedCells = cells.map((cell) => (
+    const renderedCells = cells.map((cell, index) => (
         <Fragment key={cell.id}>
             <AddCell nextCellId={cell.id} />
-            <CellItem key={cell.id} cell={cell} />
+            <CellItem key={cell.id} cell={cell} count={index + 1} />
         </Fragment>
     ));
 
