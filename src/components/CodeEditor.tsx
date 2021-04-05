@@ -1,8 +1,8 @@
 import MoancoEditor, { OnChange, OnMount } from '@monaco-editor/react';
 import prettier from 'prettier';
 import parser from 'prettier/parser-babel';
-import codeShift from 'jscodeshift';
-import Highlighter from 'monaco-jsx-highlighter';
+// import codeShift from 'jscodeshift';
+// import Highlighter from 'monaco-jsx-highlighter';
 import styled from 'styled-components';
 import React, { useRef } from 'react';
 
@@ -20,12 +20,12 @@ export const CodeEditor: React.FC<CodeEditorProps> = ({
     const handleChange: OnChange = (getValue, ev): void => {
         getValue && onEditorChange(getValue);
 
-        const highlighter = new Highlighter(
-            //@ts-ignore
-            window.monaco,
-            codeShift,
-            editorRef
-        );
+        // const highlighter = new Highlighter(
+        //     //@ts-ignore
+        //     window.monaco,
+        //     codeShift,
+        //     editorRef
+        // );
 
         // highlighter.highLightOnDidChangeModelContent(
         //     () => {},
