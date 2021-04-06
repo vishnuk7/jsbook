@@ -1,5 +1,5 @@
 # JSPaper
-
+[![Netlify Status](https://api.netlify.com/api/v1/badges/eba3c52b-bc83-4f83-8e9b-bfb5e624f2ac/deploy-status)](https://app.netlify.com/sites/jspaper/deploys)
 ![logo](/README/JSPaperLogo.png)
 
 🖥 [Live Demo]()
