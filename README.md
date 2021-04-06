@@ -1,6 +1,8 @@
 # JSPaper
-[![Netlify Status](https://api.netlify.com/api/v1/badges/eba3c52b-bc83-4f83-8e9b-bfb5e624f2ac/deploy-status)](https://app.netlify.com/sites/jspaper/deploys)
+
 ![logo](/README/JSPaperLogo.png)
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/eba3c52b-bc83-4f83-8e9b-bfb5e624f2ac/deploy-status)](https://app.netlify.com/sites/jspaper/deploys)
 
 🖥 [Live Demo](https://jspaper.netlify.app/)
 
@@ -9,11 +11,11 @@ JSPaper is React App which is codeeditor + markdown like jupyter notebook. In th
 ### Features ✨
 - import any npm packages (without installing just simply import it)
 - write `js` code
-- write `jxs` code
+- write `jsx` code
 - create a react app
-- you can move up and down codecells and textcells
-- you can delete codecells and textcells
-- drag code cells and textcells (only in full verison)
+- you can move up and down code cells and text cells
+- you can delete code cells and text cells
+- drag code cells and text cells (only in full verison)
 - caching the packages in **IndexDB**
 
 ### Technology Used 🛠
